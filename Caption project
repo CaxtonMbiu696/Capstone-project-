@@ -1,0 +1,82 @@
+#include<stdio.h>
+#include<string.h>
+
+struct Employee {
+    char name[40];
+    char password[20];
+};
+
+struct Booking {
+    int busNumber;
+    int seatNumber;
+    char passengerName[50];
+    float payment;
+    char bookingtime[10];
+    char arrivaltime[10];
+    char seatPreference[20]; // Window, Front, Back, etc.
+};
+
+struct Bus {
+    int busNumber;
+    int totalSeats;
+    char source[50];
+    char destination[50];
+    int availableSeats;
+    int bookedSeats;
+};
+
+// Function prototypes
+void addBus(struct Bus* buses, int* busCount);
+void deleteBus(struct Bus* buses, int* busCount);
+void viewAllBuses(struct Bus* buses, int busCount);
+void bookSeat(struct Bus* buses, int busCount, struct Booking* book);
+void cancelBooking(struct Bus* buses, int busCount, struct Booking* book);
+void viewBookingHistory(struct Booking* book);
+void saveToFile(struct Bus* buses, int busCount, struct Booking* book);
+void loadFromFile(struct Bus* buses, int* busCount, struct Booking* book);
+
+int main() {
+    struct Bus buses[50]; // Assuming a maximum of 50 buses
+    struct Booking book;
+    int busCount = 0;
+    
+    loadFromFile(buses, &busCount, &book);
+    
+    // Add your menu options here
+    // Example: addBus(buses, &busCount);
+    
+    saveToFile(buses, busCount, &book);
+    return 0;
+}
+
+void addBus(struct Bus* buses, int* busCount) {
+    // Implement functionality to add a new bus
+}
+
+void deleteBus(struct Bus* buses, int* busCount) {
+    // Implement functionality to delete a bus
+}
+
+void viewAllBuses(struct Bus* buses, int busCount) {
+    // Implement functionality to view all buses
+}
+
+void bookSeat(struct Bus* buses, int busCount, struct Booking* book) {
+    // Implement functionality to book a seat
+}
+
+void cancelBooking(struct Bus* buses, int busCount, struct Booking* book) {
+    // Implement functionality to cancel a booking
+}
+
+void viewBookingHistory(struct Booking* book) {
+    // Implement functionality to view booking history
+}
+
+void saveToFile(struct Bus* buses, int busCount, struct Booking* book) {
+    // Implement functionality to save data to a file
+}
+
+void loadFromFile(struct Bus* buses, int* busCount, struct Booking* book) {
+    // Implement functionality to load data from a file
+}
